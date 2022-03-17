@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <style>
+  .function-item{
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+  <div class="content" style="padding: 20px 15px;">
+    <select class="form-select" id="select" aria-label="Default select example">
+      <option selected>选择</option>
+     <option value="5">addSupportTokens</option>
+    <option value="6">buyOrder</option>
+    <option value="7">cancelOrder</option>
+    <option value="8">createOrder</option>
+    <option value="9">delSupportTokens</option>
+    <option value="12">getRateAmount</option>
+    <option value="16">initialize</option>
+    <option value="19">onERC1155BatchReceived</option>
+    <option value="20">onERC1155Received</option>
+    <option value="24">renounceOwnership</option>
+    <option value="25">setCanSell</option>
+    <option value="26">setMinPrice</option>
+    <option value="27">setNftAddress</option>
+    <option value="28">setPlatformFee</option>
+    <option value="29">setReceiveAddress</option>
+    <option value="31">transferOwnership</option>
+    
+    </select>
+
+    <div style="margin-top: 20px" id="function-box">
+     <div class="function-item" id="addSupportTokensBox">
+    <div class="mb-3">
+          <label for="addSupportTokens_token" class="form-label">token</label>
+          <input type="text" class="form-control" id="addSupportTokens_token" placeholder="address" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="addSupportTokens__minPrice" class="form-label">_minPrice</label>
+          <input type="number" class="form-control" id="addSupportTokens__minPrice" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.addSupportTokens()" type="button">addSupportTokens</button>
+       </div>
+    </div><div class="function-item" id="buyOrderBox">
+    <div class="mb-3">
+          <label for="buyOrder_orderId" class="form-label">orderId</label>
+          <input type="number" class="form-control" id="buyOrder_orderId" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+      <label for="ethValue" class="form-label">Eth value</label>
+      <input type="number" class="form-control" id="ethValue" placeholder="uint256" aria-describedby="emailHelp">
+    </div>
+    
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.buyOrder()" type="button">buyOrder</button>
+       </div>
+    </div><div class="function-item" id="cancelOrderBox">
+    <div class="mb-3">
+          <label for="cancelOrder_orderId" class="form-label">orderId</label>
+          <input type="number" class="form-control" id="cancelOrder_orderId" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.cancelOrder()" type="button">cancelOrder</button>
+       </div>
+    </div><div class="function-item" id="createOrderBox">
+    <div class="mb-3">
+          <label for="createOrder_payToken" class="form-label">payToken</label>
+          <input type="text" class="form-control" id="createOrder_payToken" placeholder="address" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="createOrder_tokenId" class="form-label">tokenId</label>
+          <input type="number" class="form-control" id="createOrder_tokenId" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="createOrder_amount" class="form-label">amount</label>
+          <input type="number" class="form-control" id="createOrder_amount" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="createOrder_price" class="form-label">price</label>
+          <input type="number" class="form-control" id="createOrder_price" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.createOrder()" type="button">createOrder</button>
+       </div>
+    </div><div class="function-item" id="delSupportTokensBox">
+    <div class="mb-3">
+          <label for="delSupportTokens_token" class="form-label">token</label>
+          <input type="text" class="form-control" id="delSupportTokens_token" placeholder="address" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.delSupportTokens()" type="button">delSupportTokens</button>
+       </div>
+    </div><div class="function-item" id="getRateAmountBox">
+    <div class="mb-3">
+          <label for="getRateAmount__amount" class="form-label">_amount</label>
+          <input type="number" class="form-control" id="getRateAmount__amount" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="getRateAmount__rate" class="form-label">_rate</label>
+          <input type="number" class="form-control" id="getRateAmount__rate" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.getRateAmount()" type="button">getRateAmount</button>
+       </div>
+    </div><div class="function-item" id="initializeBox">
+    
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.initialize()" type="button">initialize</button>
+       </div>
+    </div><div class="function-item" id="onERC1155BatchReceivedBox">
+    <div class="mb-3">
+          <label for="onERC1155BatchReceived_onERC1155BatchReceivedinput0" class="form-label">onERC1155BatchReceivedinput0</label>
+          <input type="text" class="form-control" id="onERC1155BatchReceived_onERC1155BatchReceivedinput0" placeholder="address" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="onERC1155BatchReceived_onERC1155BatchReceivedinput1" class="form-label">onERC1155BatchReceivedinput1</label>
+          <input type="text" class="form-control" id="onERC1155BatchReceived_onERC1155BatchReceivedinput1" placeholder="address" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="onERC1155BatchReceived_onERC1155BatchReceivedinput2" class="form-label">onERC1155BatchReceivedinput2</label>
+          <input type="text" class="form-control" id="onERC1155BatchReceived_onERC1155BatchReceivedinput2" placeholder="uint256[]" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="onERC1155BatchReceived_onERC1155BatchReceivedinput3" class="form-label">onERC1155BatchReceivedinput3</label>
+          <input type="text" class="form-control" id="onERC1155BatchReceived_onERC1155BatchReceivedinput3" placeholder="uint256[]" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="onERC1155BatchReceived_onERC1155BatchReceivedinput4" class="form-label">onERC1155BatchReceivedinput4</label>
+          <input type="text" class="form-control" id="onERC1155BatchReceived_onERC1155BatchReceivedinput4" placeholder="bytes" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.onERC1155BatchReceived()" type="button">onERC1155BatchReceived</button>
+       </div>
+    </div><div class="function-item" id="onERC1155ReceivedBox">
+    <div class="mb-3">
+          <label for="onERC1155Received_onERC1155Receivedinput0" class="form-label">onERC1155Receivedinput0</label>
+          <input type="text" class="form-control" id="onERC1155Received_onERC1155Receivedinput0" placeholder="address" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="onERC1155Received_onERC1155Receivedinput1" class="form-label">onERC1155Receivedinput1</label>
+          <input type="text" class="form-control" id="onERC1155Received_onERC1155Receivedinput1" placeholder="address" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="onERC1155Received_onERC1155Receivedinput2" class="form-label">onERC1155Receivedinput2</label>
+          <input type="number" class="form-control" id="onERC1155Received_onERC1155Receivedinput2" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="onERC1155Received_onERC1155Receivedinput3" class="form-label">onERC1155Receivedinput3</label>
+          <input type="number" class="form-control" id="onERC1155Received_onERC1155Receivedinput3" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="onERC1155Received_onERC1155Receivedinput4" class="form-label">onERC1155Receivedinput4</label>
+          <input type="text" class="form-control" id="onERC1155Received_onERC1155Receivedinput4" placeholder="bytes" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.onERC1155Received()" type="button">onERC1155Received</button>
+       </div>
+    </div><div class="function-item" id="renounceOwnershipBox">
+    
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.renounceOwnership()" type="button">renounceOwnership</button>
+       </div>
+    </div><div class="function-item" id="setCanSellBox">
+    <div class="mb-3">
+          <label for="setCanSell__canSell" class="form-label">_canSell</label>
+          <input type="text" class="form-control" id="setCanSell__canSell" placeholder="bool" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.setCanSell()" type="button">setCanSell</button>
+       </div>
+    </div><div class="function-item" id="setMinPriceBox">
+    <div class="mb-3">
+          <label for="setMinPrice__tokenId" class="form-label">_tokenId</label>
+          <input type="number" class="form-control" id="setMinPrice__tokenId" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="setMinPrice__minPrice" class="form-label">_minPrice</label>
+          <input type="number" class="form-control" id="setMinPrice__minPrice" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.setMinPrice()" type="button">setMinPrice</button>
+       </div>
+    </div><div class="function-item" id="setNftAddressBox">
+    <div class="mb-3">
+          <label for="setNftAddress__nftAddress" class="form-label">_nftAddress</label>
+          <input type="text" class="form-control" id="setNftAddress__nftAddress" placeholder="address" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.setNftAddress()" type="button">setNftAddress</button>
+       </div>
+    </div><div class="function-item" id="setPlatformFeeBox">
+    <div class="mb-3">
+          <label for="setPlatformFee__platformFee" class="form-label">_platformFee</label>
+          <input type="number" class="form-control" id="setPlatformFee__platformFee" placeholder="uint256" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.setPlatformFee()" type="button">setPlatformFee</button>
+       </div>
+    </div><div class="function-item" id="setReceiveAddressBox">
+    <div class="mb-3">
+          <label for="setReceiveAddress__receiveAddress" class="form-label">_receiveAddress</label>
+          <input type="text" class="form-control" id="setReceiveAddress__receiveAddress" placeholder="address" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.setReceiveAddress()" type="button">setReceiveAddress</button>
+       </div>
+    </div><div class="function-item" id="transferOwnershipBox">
+    <div class="mb-3">
+          <label for="transferOwnership_newOwner" class="form-label">newOwner</label>
+          <input type="text" class="form-control" id="transferOwnership_newOwner" placeholder="address" aria-describedby="emailHelp">
+        </div>
+        
+    <div class="d-grid gap-2">
+         <button class="btn btn-primary" onclick="App.transferOwnership()" type="button">transferOwnership</button>
+       </div>
+    </div>
+    </div>
+  </div>
+</body>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/web3.min.js"></script>
+<script src="./js/bignumber.min.js"></script>
+<script src="./dapp.js"></script>
+</html>
